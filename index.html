@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>VVIP Chicken & Mutton Shop</title>
+  <meta name="description" content="Fresh Chicken & Mutton delivered to your doorstep. Order now from VVIP Chicken & Mutton Shop.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f7f7f7;
+      color: #171717;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 18px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .logo span {
+      color: #e21b23;
+    }
+
+    .hero {
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.68)),
+        radial-gradient(circle at center, #8b1118, #111 70%);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 8vw, 70px);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: #ff252d;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.6;
+      color: #eee;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      margin: 5px;
+      transition: .2s;
+    }
+
+    .btn-red {
+      background: #e21b23;
+      color: white;
+    }
+
+    .btn-green {
+      background: #25d366;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: .92;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 55px 20px;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .title h2 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .title p {
+      color: #666;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+      border: 1px solid #eee;
+    }
+
+    .food-icon {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: 900;
+      color: #e21b23;
+      margin-bottom: 18px;
+    }
+
+    .order-btn {
+      display: block;
+      background: #111;
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .features {
+      background: #111;
+      color: white;
+      max-width: none;
+    }
+
+    .feature-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 55px 20px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      text-align: center;
+    }
+
+    .feature {
+      padding: 20px;
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: #bbb;
+      line-height: 1.5;
+    }
+
+    .about {
+      text-align: center;
+      max-width: 750px;
+    }
+
+    .about p {
+      color: #555;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .contact-box {
+      background: white;
+      padding: 35px 20px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    }
+
+    .contact-box h2 {
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      margin: 8px;
+      color: #555;
+    }
+
+    footer {
+      background: #080808;
+      color: #aaa;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(0,0,0,.3);
+      z-index: 999;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 520px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 45px 15px;
+      }
+
+      .title h2 {
+        font-size: 29px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="logo">
+        VVIP <span>CHICKEN & MUTTON</span>
+      </div>
+      <div>Fresh • Quality • Trusted</div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>VVIP <span>CHICKEN & MUTTON</span> SHOP</h1>
+
+      <p>
+        Fresh Chicken & Mutton with premium quality,
+        hygienic cutting and fast local delivery.
+      </p>
+
+      <a class="btn btn-red" href="#products">View Products</a>
+
+      <a class="btn btn-green"
+         href="https://wa.me/91XXXXXXXXXX?text=Hello%20VVIP%20Chicken%20%26%20Mutton%20Shop,%20I%20want%20to%20place%20an%20order.">
+         Order on WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <section id="products">
+
+    <div class="title">
+      <h2>Our Products</h2>
+      <p>Freshly prepared for you</p>
+    </div>
+
+    <div class="products">
+
+      <div class="card">
+        <div class="food-icon">🐔</div>
+        <h3>Fresh Chicken</h3>
+        <p>Fresh and hygienically cleaned chicken.</p>
+        <div class="price">₹ -- / Kg</div>
+
+        <a class="order-btn"
+           href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Fresh%20Chicken.">
+           Order Now
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="food-icon">🍗</div>
+        <h3>Chicken Curry Cut</h3>
+        <p>Fresh chicken cut according to your requirement.</p>
+        <div class="price">₹ -- / Kg</div>
+
+        <a class="order-btn"
+           href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Chicken%20Curry%20Cut.">
+           Order Now
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="food-icon">🥩</div>
+        <h3>Fresh Mutton</h3>
+        <p>Premium quality fresh mutton.</p>
+        <div class="price">₹ -- / Kg</div>
+
+        <a class="order-btn"
+           href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Fresh%20Mutton.">
+           Order Now
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="food-icon">🍖</div>
+        <h3>Mutton Curry Cut</h3>
+        <p>Fresh mutton prepared as per your choice.</p>
+        <div class="price">₹ -- / Kg</div>
+
+        <a class="order-btn"
+           href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Mutton%20Curry%20Cut.">
+           Order Now
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="features">
+
+    <div class="feature-inner">
+
+      <div class="title">
+        <h2 style="color:white;">Why Choose VVIP?</h2>
+        <p style="color:#bbb;">Quality you can trust</p>
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature">
+          <div class="feature-icon">🥩</div>
+          <h3>Fresh Meat</h3>
+          <p>Freshly prepared products for every order.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">✨</div>
+          <h3>Hygienic</h3>
+          <p>Clean and hygienic handling.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🚚</div>
+          <h3>Fast Delivery</h3>
+          <p>Local delivery available.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">⭐</div>
+          <h3>VVIP Quality</h3>
+          <p>Premium service for our customers.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <section class="about">
+
+    <div class="title">
+      <h2>About Us</h2>
+    </div>
+
+    <p>
+      Welcome to VVIP Chicken & Mutton Shop.
+      We provide fresh, quality chicken and mutton
+      with hygienic preparation and customer-focused service.
+      Place your order easily through WhatsApp.
+    </p>
+
+  </section>
+
+  <section>
+
+    <div class="contact-box">
+
+      <h2>Order Fresh Meat Today 🛒</h2>
+
+      <p>📞 Call us for orders</p>
+      <p>📲 WhatsApp us for quick ordering</p>
+      <p>📍 Your Shop Address Here</p>
+
+      <br>
+
+      <a class="btn btn-green"
+         href="https://wa.me/91XXXXXXXXXX?text=Hello,%20I%20want%20to%20place%20an%20order.">
+         💬 Order on WhatsApp
+      </a>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 VVIP Chicken & Mutton Shop. All Rights Reserved.
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/91XXXXXXXXXX?text=Hello,%20I%20want%20to%20place%20an%20order."
+     aria-label="WhatsApp">
+    ☎
+  </a>
+
+</body>
+</html>
