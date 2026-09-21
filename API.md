@@ -1,0 +1,19 @@
+# API surface
+GET /api/health
+GET /api/config
+GET /api/products
+POST /api/auth/request-otp
+POST /api/auth/verify-otp
+POST /api/orders
+GET /api/orders
+GET /api/orders/:id
+PATCH /api/orders/:id/status
+POST /api/delivery/assign
+GET /api/delivery/qr/:orderId
+POST /api/delivery/verify-qr
+GET /api/admin/stats
+POST /api/admin/settings
+POST /api/sellers
+GET /api/sellers
+POST /api/delivery/partners
+GET /api/delivery/partners
